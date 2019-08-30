@@ -50,7 +50,7 @@ colnames(Meged_Data) <- c("Subject", "Activity", Required_Features.names)
 
 # Now turning the activities and subjects into factors as follows: 
 
-Meged_Data$Activity <- factor(Meged_Data$activity, levels = Activity_Labels [,1], labels = Activity_Labels [,2])
+Meged_Data$Activity <- factor(Meged_Data$Activity, levels = Activity_Labels [,1], labels = Activity_Labels [,2])
 
 Meged_Data$Subject <- as.factor(Meged_Data$Subject)
 
@@ -59,3 +59,4 @@ Meged_Data.mean <- dcast(Meged_Data.melted, Subject + Activity ~ variable, mean)
 
 # Finally, writing the tidy data set in txt file
 write.table(Meged_Data.mean, "Tidy_Data.txt", row.names = FALSE, quote = FALSE)
+
